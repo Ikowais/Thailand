@@ -1,68 +1,34 @@
 import React from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default function App() {
-  const [phoneNumber, setPhoneNumber] = React.useState('');
-
-  const handleContinue = () => {
-    console.log('Phone Number:', phoneNumber);
-  };
-
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Đăng nhập</Text>
-      {/* Đường kẻ ngăn cách */}
-      <View style={styles.separator} />
-      <Text style={styles.t2}>Nhập số điện thoại</Text>
-      <Text style={styles.t3}>Dùng sđt để đăng nhập hoặc đăng kí tài khoản tại OneHousing Pro</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Nhập số điện thoại của bạn"
-        keyboardType="phone-pad"
-        value={phoneNumber}
-        onChangeText={setPhoneNumber}
-      />
-      <Button
-        title="Tiếp tục"
-        onPress={handleContinue}
-        disabled={phoneNumber.length === 0}
-      />
+      <View style={styles.square}>
+        <Text style={styles.text}>Hello, world</Text>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start', // Nội dung lên trên
-    padding: 16,
-    paddingTop: 50, // Khoảng cách với mép trên
-    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8, // Tạo khoảng cách phía dưới dòng "Đăng nhập"
+  square: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'blue',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  separator: {
-    height: 1, // Độ dày của đường kẻ
-    backgroundColor: '#ddd', // Màu của đường kẻ
-    marginBottom: 16, // Khoảng cách với nội dung bên dưới
-  },
-  t2: {
+  text: {
+    color: 'white',
     fontSize: 16,
-    marginBottom: 8,
-  },
-  t3: {
-    fontSize: 14,
-    marginBottom: 8,
-  },
-  input: {
-    height: 50,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    marginBottom: 16,
+    fontWeight: 'bold',
   },
 });
+
+export default App;
